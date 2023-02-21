@@ -13,7 +13,10 @@ echo '::endgroup::'
 
 if [ ! -f "$(npm bin)/eslint" ]; then
   echo '::group:: Running `npm install` to install eslint ...'
+  echo $(npm bin)
+  ls $(npm bin)
   npm install --force --legacy-peer-deps
+  npm install eslint@7.32.0 -g
   echo '::endgroup::'
 fi
 
